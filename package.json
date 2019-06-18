@@ -1,0 +1,26 @@
+{
+  "name": "tsbuffer-cli",
+  "version": "0.0.1",
+  "description": "TSBuffer CLI Tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k8w/tsbuffer-cli.git"
+  },
+  "keywords": [
+    "tsbuffer",
+    "k8w",
+    "typescript",
+    "buffer",
+    "protobuf"
+  ],
+  "author": "k8w",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/k8w/tsbuffer-cli/issues"
+  },
+  "homepage": "https://github.com/k8w/tsbuffer-cli#readme"
+}
