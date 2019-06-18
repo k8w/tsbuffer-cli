@@ -8,12 +8,18 @@ const i18n = require('./i18n/zh-cn');
 const version = require('./package.json').version;
 const args = minimist(process.argv);
 
-showLogo();
-console.log(i18n.welcome.replace('${version}', version));
-console.log('-----------------------------------------------------------------------------');
-
+// Help
 if (args.h || args.help) {
     showHelp();
+}
+// Proto
+// Encode
+// Decode
+// Validate
+// Show
+// Error
+else {
+    console.log(i18n.errCmd.red);
 }
 
 function showLogo() {
@@ -28,5 +34,8 @@ function showLogo() {
 }
 
 function showHelp() {
+    showLogo();
+    console.log(i18n.welcome.replace('${version}', version));
+    console.log('-----------------------------------------------------------------------------');
     console.log(i18n.help);
 }
