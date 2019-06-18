@@ -1,0 +1,32 @@
+{
+  "test": {
+    "InterfaceName": {
+      "type": "Interface",
+      "properties": [
+        {
+          "id": 0,
+          "name": "a",
+          "type": {
+            "type": "String"
+          }
+        },
+        {
+          "id": 1,
+          "name": "b",
+          "type": {
+            "type": "Interface",
+            "properties": [
+              {
+                "id": 0,
+                "name": "value",
+                "type": {
+                  "type": "Number"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
