@@ -5,6 +5,7 @@ import 'colors';
 import minimist from 'minimist';
 import { TSBufferProtoGenerator } from 'tsbuffer-proto-generator';
 import * as fs from "fs";
+import * as path from "path";
 
 const i18n = require('./i18n/zh-cn');
 const version = require('./package.json').version;
@@ -73,7 +74,7 @@ async function proto() {
 
     if (output) {
         fs.writeFileSync(output, protoStr);
-        console.log(i18n.protoSucc.replace('${output}', output).green);
+        console.log(i18n.protoSucc.replace('${output}', path.resolve(output)).green);
     }
     else {
         console.log(protoStr.green);
