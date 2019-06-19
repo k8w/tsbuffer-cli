@@ -3,7 +3,7 @@
 import * as glob from 'glob';
 import 'colors';
 import minimist from 'minimist';
-import { TSBufferSchemaGenerator } from 'tsbuffer-schema-generator';
+import { TSBufferProtoGenerator } from 'tsbuffer-proto-generator';
 import * as fs from "fs";
 
 const i18n = require('./i18n/zh-cn');
@@ -58,16 +58,22 @@ function showHelp() {
 }
 
 async function proto() {
-    if (!args.file && !args.f) {
-        console.log(i18n.missingFile.red)
+    let input: string | string[] | undefined = args.input || args.i;
+    let output: string | undefined = args.output || args.o;
+    let compatible: string | undefined = args.compatible || args.c;
+    let ugly: boolean | undefined = args.ugly || args.u;
+
+    if (!input) {
+        console.log(i18n.missingFile.red);
+        return;
     }
 
-    let proto = await new TSBufferSchemaGenerator().generate(args.f || args.file as string | string[]);
+    let proto = await new TSBufferProtoGenerator().generate(input);
     let protoStr = args.u || args.ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2);
 
-    let outPath: string | undefined = args.o || args.out;
-    if (outPath) {
-        fs.writeFileSync(outPath, protoStr);
+    if (output) {
+        fs.writeFileSync(output, protoStr);
+        console.log(i18n.protoSucc.replace('${output}', output).green);
     }
     else {
         console.log(protoStr.green);
