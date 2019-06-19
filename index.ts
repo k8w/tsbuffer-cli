@@ -6,6 +6,7 @@ import minimist from 'minimist';
 import { TSBufferProtoGenerator } from 'tsbuffer-proto-generator';
 import * as fs from "fs";
 import * as path from "path";
+import { TSBufferProto } from 'tsbuffer-schema';
 
 const i18n = require('./i18n/zh-cn');
 const version = require('./package.json').version;
@@ -65,12 +66,30 @@ async function proto() {
     let ugly: boolean | undefined = args.ugly || args.u;
 
     if (!input) {
-        console.log(i18n.missingFile.red);
-        return;
+        console.error(i18n.missingFile.red);
+        process.exit(-1);
     }
 
-    let proto = await new TSBufferProtoGenerator().generate(input);
-    let protoStr = args.u || args.ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2);
+    let oldProto: TSBufferProto | undefined;
+    if (compatible) {
+        if (!fs.existsSync(compatible)) {
+            console.error(i18n.oldProtoNotFound.replace('${file}', path.resolve(compatible)).red);
+            process.exit(-1);
+        }
+        try {
+            let oldFile = fs.readFileSync(compatible).toString();
+            oldProto = JSON.parse(oldFile);
+        }
+        catch{
+            console.error(i18n.oldProtoParseError.replace('${file}', path.resolve(compatible)).red);
+            process.exit(-1);
+        }
+    }
+
+    let proto = await new TSBufferProtoGenerator().generate(input, {
+        compatibleResult: oldProto
+    });
+    let protoStr = ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2);
 
     if (output) {
         fs.writeFileSync(output, protoStr);

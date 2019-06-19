@@ -3,14 +3,14 @@
     "type": "Interface",
     "properties": [
       {
-        "id": 0,
+        "id": 123,
         "name": "a",
         "type": {
           "type": "String"
         }
       },
       {
-        "id": 1,
+        "id": 232,
         "name": "b",
         "type": {
           "type": "Number"
@@ -61,11 +61,11 @@
         "value": 0
       },
       {
-        "id": 1,
+        "id": 11,
         "value": 1
       },
       {
-        "id": 2,
+        "id": 1,
         "value": 2
       },
       {

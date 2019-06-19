@@ -25,5 +25,7 @@ export = {
 `.trim(),
     errCmd: '[错误] 命令格式有误，键入 tsbuffer -h 以查看帮助。',
     missingFile: '[错误] 缺少 --file 参数，键入 tsbuffer -h 以查看更多信息。',
-    protoSucc: '√ Proto已生成到：${output}'
+    protoSucc: '√ Proto已生成到：${output}',
+    oldProtoNotFound: '× 旧Proto文件没有找到: ${file}',
+    oldProtoParseError: '× 旧Proto文件格式非法: ${file}',
 }
