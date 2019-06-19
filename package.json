@@ -4,7 +4,7 @@
   "description": "TSBuffer CLI Tools",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -d && cp package.json dist",
+    "build": "rm -rf dist && tsc -d && cp package.json dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -32,7 +32,7 @@
     "glob": "^7.1.4",
     "minimist": "^1.2.0",
     "tsbuffer": "0.0.1",
-    "tsbuffer-schema-generator": "^1.1.3"
+    "tsbuffer-proto-generator": "^1.0.1"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
