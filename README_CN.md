@@ -5,7 +5,7 @@ TSBuffer
 
 [TSBuffer](https://npmjs.com/tsbuffer) 命令行使用工具
 
-# 安装
+## 安装
 ```
 npm i -g tsbuffer-cli
 ```
@@ -37,7 +37,7 @@ tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
 tsbuffer show buf.bin
 ```
 
-# 命令行参数说明
+## 命令行参数说明
 ```
 tsbuffer proto <options>                生成Proto文件
     -i, --input <file>                  用来生成Proto的TS文件（glob表达式）

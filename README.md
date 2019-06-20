@@ -10,7 +10,7 @@ CLI utilities for [TSBuffer](https://npmjs.com/tsbuffer)
 npm i -g tsbuffer-cli
 ```
 
-# Usage
+## Usage
 ### Generate proto
 ```
 tsbuffer proto -i **/*.ts -o proto.json
@@ -38,7 +38,7 @@ tsbuffer validate -p proto.json -s fileName/TypeName -i xxx.js
 tsbuffer show buf.bin
 ```
 
-# CLI Reference
+## CLI Reference
 ```
 tsbuffer proto <options>                Generate proto file
     -i, --input <file>                  Input TS file (support glob expression)
