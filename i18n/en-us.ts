@@ -41,9 +41,9 @@ Example：
 
     tsbuffer proto -i **/*.ts -o proto.json
 
-    tsbuffer encode -p proto.json -s fileName/TypeName -o buf.bin "{value: 1}"
-    tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
-    tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
+    tsbuffer encode -p proto.json -s a/b/c/TypeName -o buf.bin "{value: 1}"
+    tsbuffer decode -p proto.json -s a/b/c/TypeName "01 0A 01"
+    tsbuffer validate -p proto.json -s a/b/c/TypeName "{value: 1}"
     tsbuffer show buf.bin
 `.trim(),
     errCmd: 'Error command, use "tsbuffer -h" to see more help info.',

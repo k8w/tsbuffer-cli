@@ -18,18 +18,20 @@ tsbuffer proto -i **/*.ts -o proto.json
 
 ### 编码测试
 ```
-tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}"
-tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}" -o buf.bin 
+tsbuffer encode -p proto.json -s a/b/c/TypeName "{value: 1}"
+tsbuffer encode -p proto.json -s a/b/c/TypeName "{value: 1}" -o buf.bin 
 ```
 
 ### 解码测试
 ```
-tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
+tsbuffer decode -p proto.json -s a/b/c/TypeName "01 0A 01"
+tsbuffer decode -p proto.json -s a/b/c/TypeName -i buf.bin
 ```
 
 ### 类型验证
 ```
-tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
+tsbuffer validate -p proto.json -s a/b/c/TypeName "{value: 1}"
+tsbuffer validate -p proto.json -s a/b/c/TypeName -i value.js
 ```
 
 ### 显示二进制文件

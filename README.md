@@ -18,19 +18,19 @@ tsbuffer proto -i **/*.ts -o proto.json
 
 ### Encode Test
 ```
-tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}"
-tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}" -o buf.bin
+tsbuffer encode -p proto.json -s a/b/c/TypeName "{value: 1}"
+tsbuffer encode -p proto.json -s a/b/c/TypeName "{value: 1}" -o buf.bin
 ```
 ### Decode Test
 ```
-tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
-tsbuffer decode -p proto.json -s fileName/TypeName -i buf.bin -o output.js
+tsbuffer decode -p proto.json -s a/b/c/TypeName "01 0A 01"
+tsbuffer decode -p proto.json -s a/b/c/TypeName -i buf.bin -o output.js
 ```
 
 ### Validate Test
 ```
-tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
-tsbuffer validate -p proto.json -s fileName/TypeName -i xxx.js
+tsbuffer validate -p proto.json -s a/b/c/TypeName "{value: 1}"
+tsbuffer validate -p proto.json -s a/b/c/TypeName -i xxx.js
 ```
 
 ### Show buffer
