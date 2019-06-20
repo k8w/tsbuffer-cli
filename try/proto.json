@@ -1,16 +1,16 @@
 {
-  "types/InterfaceName": {
+  "fileName/InterfaceName": {
     "type": "Interface",
     "properties": [
       {
-        "id": 123,
+        "id": 0,
         "name": "a",
         "type": {
           "type": "String"
         }
       },
       {
-        "id": 232,
+        "id": 1,
         "name": "b",
         "type": {
           "type": "Number"
@@ -53,7 +53,7 @@
       }
     ]
   },
-  "types/TestEnum": {
+  "fileName/TestEnum": {
     "type": "Enum",
     "members": [
       {
@@ -61,11 +61,11 @@
         "value": 0
       },
       {
-        "id": 11,
+        "id": 1,
         "value": 1
       },
       {
-        "id": 1,
+        "id": 2,
         "value": 2
       },
       {
@@ -82,7 +82,7 @@
       }
     ]
   },
-  "types/FFF": {
+  "fileName/TypeName": {
     "type": "Interface",
     "properties": [
       {
@@ -90,7 +90,7 @@
         "name": "value",
         "type": {
           "type": "Reference",
-          "target": "types/TestEnum"
+          "target": "fileName/TestEnum"
         }
       }
     ]

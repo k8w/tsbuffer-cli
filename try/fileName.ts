@@ -17,6 +17,6 @@ export enum TestEnum {
     f
 }
 
-export type FFF = {
+export type TypeName = {
     value: TestEnum
 }
