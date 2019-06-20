@@ -11,28 +11,28 @@ npm i -g tsbuffer-cli
 ```
 
 # 示例
-## 生成Proto
+### 生成Proto
 ```
 tsbuffer proto -i **/*.ts -o proto.json
 ```
 
-## 编码测试
+### 编码测试
 ```
 tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}"
 tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}" -o buf.bin 
 ```
 
-## 解码测试
+### 解码测试
 ```
 tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
 ```
 
-## 类型验证
+### 类型验证
 ```
 tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
 ```
 
-## 显示二进制文件
+### 显示二进制文件
 ```
 tsbuffer show buf.bin
 ```

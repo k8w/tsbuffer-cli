@@ -11,29 +11,29 @@ npm i -g tsbuffer-cli
 ```
 
 # Usage
-## Generate proto
+### Generate proto
 ```
 tsbuffer proto -i **/*.ts -o proto.json
 ```
 
-## Encode Test
+### Encode Test
 ```
 tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}"
 tsbuffer encode -p proto.json -s fileName/TypeName "{value: 1}" -o buf.bin
 ```
-## Decode Test
+### Decode Test
 ```
 tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
 tsbuffer decode -p proto.json -s fileName/TypeName -i buf.bin -o output.js
 ```
 
-## Validate Test
+### Validate Test
 ```
 tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
 tsbuffer validate -p proto.json -s fileName/TypeName -i xxx.js
 ```
 
-## Show buffer
+### Show buffer
 ```
 tsbuffer show buf.bin
 ```
