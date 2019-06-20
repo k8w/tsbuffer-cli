@@ -39,10 +39,8 @@ Usage：
     example: `
 Example：
 
-    Generate proto:
     tsbuffer proto -i **/*.ts -o proto.json
 
-    Encode / Decode test:
     tsbuffer encode -p proto.json -s fileName/TypeName -o buf.bin "{value: 1}"
     tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
     tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
