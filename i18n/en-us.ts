@@ -1,5 +1,5 @@
 export const i18n = {
-    welcome: 'Welcome to TSBuffer utilities  V${version}',
+    welcome: 'https://npmjs.com/tsbuffer\nWelcome to TSBuffer utilities V${version}',
     help: `
 Usage：
 
@@ -39,7 +39,10 @@ Usage：
     example: `
 Example：
 
+    Generate proto:
     tsbuffer proto -i **/*.ts -o proto.json
+
+    Encode / Decode test:
     tsbuffer encode -p proto.json -s fileName/TypeName -o buf.bin "{value: 1}"
     tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
     tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
@@ -58,5 +61,6 @@ Example：
     decodeSucc: '√ Decoded succ to: ${output}',
     validateSucc: '√ Validate succ',
     validateFail: '× Validate fail: ${msg}',
-    error: ' ERROR '
+    error: ' ERROR ',
+    helpGuide: 'Use "tsbuffer -h" to see more help info.'
 }

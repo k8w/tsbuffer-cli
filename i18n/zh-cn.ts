@@ -1,5 +1,5 @@
 export const i18n = {
-    welcome: '欢迎进入 TSBuffer 实用工具  V${version}',
+    welcome: 'https://npmjs.com/tsbuffer\n欢迎进入 TSBuffer 实用工具 V${version}',
     help: `
 使用说明：
 
@@ -39,7 +39,10 @@ export const i18n = {
     example: `
 使用示例：
 
+    生成Proto：
     tsbuffer proto -i **/*.ts -o proto.json
+
+    编解码测试：
     tsbuffer encode -p proto.json -s fileName/TypeName -o buf.bin "{value: 1}"
     tsbuffer decode -p proto.json -s fileName/TypeName "01 0A 01"
     tsbuffer validate -p proto.json -s fileName/TypeName "{value: 1}"
@@ -58,5 +61,6 @@ export const i18n = {
     decodeSucc: '√ 解码结果已生成到：${output}',
     validateSucc: '√ 验证通过',
     validateFail: '× 验证不通过: ${msg}',
-    error: ' 错误 '
+    error: ' 错误 ',
+    helpGuide: '键入 tsbuffer -h 查看更多帮助信息'
 }
