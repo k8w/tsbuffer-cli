@@ -22,7 +22,7 @@ let verbose: boolean | undefined = args.verbose || args.v;
 // 进入主流程
 main();
 
-function main() {
+async function main() {
     // Version
     if (args._.length === 2 && (args.version || args.v)) {
         console.log('TSBuffer ' + version);
@@ -33,7 +33,7 @@ function main() {
     }
     // Proto
     else if (args._[2] === 'proto') {
-        proto(args.input || args.i, args.output || args.o, args.compatible || args.c, args.ugly || args.u, args.new || args.n);
+        await proto(args.input || args.i, args.output || args.o, args.compatible || args.c, args.ugly || args.u, args.new || args.n);
     }
     // Encode
     else if (args._[2] === 'encode') {
@@ -62,6 +62,7 @@ function main() {
     else {
         error(i18n.errCmd);
     }
+
     process.exit(0);
 }
 
