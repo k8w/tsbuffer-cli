@@ -98,7 +98,7 @@ async function proto(input?: string | string[], output?: string, compatible?: st
     }
     input.forEach(v => {
         // 文件夹 直接视为通配符
-        if (fs.statSync(v).isDirectory()) {
+        if (fs.existsSync(v) && fs.statSync(v).isDirectory()) {
             v = path.join(v, '**/*.ts');
         }
         fileList = fileList.concat(glob.sync(v));
