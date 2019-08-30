@@ -97,6 +97,10 @@ async function proto(input?: string | string[], output?: string, compatible?: st
         input = [input];
     }
     input.forEach(v => {
+        // 文件夹 直接视为通配符
+        if (fs.statSync(v).isDirectory()) {
+            v = path.join(v, '**/*.ts');
+        }
         fileList = fileList.concat(glob.sync(v));
     })
     fileList = fileList.distinct();
@@ -131,7 +135,15 @@ async function proto(input?: string | string[], output?: string, compatible?: st
     });
 
     if (output) {
-        fs.writeFileSync(output, ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2));
+        let json = ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2);
+        // Output TS
+        if (output.endsWith('.ts')) {
+            fs.writeFileSync(output, `export const proto = ${json};`);
+        }
+        // Output JSON
+        else {
+            fs.writeFileSync(output, json);
+        }
         console.log(formatStr(i18n.protoSucc, { output: path.resolve(output) }).green);
     }
     else {

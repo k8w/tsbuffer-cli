@@ -7,6 +7,8 @@ export const i18n = {
         -i, --input <file>                  用来生成Proto的TS文件（glob表达式）
                                             将导出所有export的类型
         -o, --output <file>                 输出的文件路径，不指定将直接输出到命令行
+                                            --output xxx.json 将输出JSON格式
+                                            --output xxx.ts 将输出TS格式
         -c, --compatible <file>             兼容模式：要兼容的旧Proto文件的路径（默认同output）
         -n, --new                           不兼容旧版，生成全新的Proto文件
         -u, --ugly                          输出为可读性较差但体积更小压缩格式
