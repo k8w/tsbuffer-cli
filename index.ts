@@ -121,11 +121,30 @@ async function proto(input?: string | string[], output?: string, compatible?: st
         }
 
         if (oldFile) {
-            try {
-                oldProto = JSON.parse(oldFile);
+            // Parse TS
+            if (oldProtoPath.endsWith('.ts')) {
+                let match = oldFile.match(/^\s*export\s+const\s+proto\s*=\s*(\{[\s\S]+\});?\s*/);
+                if (match) {
+                    try {
+                        oldProto = JSON.parse(match[1]);
+                    }
+                    catch (e) {
+                        throw error(i18n.protoParsedError, { innerError: e.message })
+                    }
+                }
+                else {
+                    console.error(`Not invalid proto ts file: ${oldProtoPath}`);
+                    throw error(i18n.protoParsedError)
+                }
             }
-            catch{
-                throw error(i18n.protoParsedError, { file: path.resolve(oldProtoPath) });
+            // Parse JSON
+            else {
+                try {
+                    oldProto = JSON.parse(oldFile);
+                }
+                catch{
+                    throw error(i18n.protoParsedError, { file: path.resolve(oldProtoPath) });
+                }
             }
         }
     }
