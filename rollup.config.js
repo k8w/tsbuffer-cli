@@ -1,8 +1,10 @@
 import typescript from 'rollup-plugin-typescript2';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-    input: './index.ts',
+    input: './src/index.ts',
     output: {
         format: 'cjs',
         file: './dist/index.js',
@@ -15,10 +17,18 @@ export default {
                     declaration: false,
                     module: "ESNext"
                 }
-            }
+            },
+            objectHashIgnoreUnknownHack: true,
+            rollupCommonJSResolveHack: true
         }),
-        uglify()
-
-    ],
-    external: ['tslib']
+        nodeResolve(),
+        commonjs(),
+        terser({
+            toplevel: true,
+            mangle: {},
+            format: {
+                comments: false
+            }
+        })
+    ]
 }
