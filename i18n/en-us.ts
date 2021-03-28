@@ -41,7 +41,7 @@ Usage：
     example: `
 Example：
 
-    tsbuffer proto -i **/*.ts -o proto.json
+    tsbuffer proto -i **/*.ts -o proto.ts
 
     tsbuffer encode -p proto.json -s a/b/c/TypeName -o buf.bin "{value: 1}"
     tsbuffer decode -p proto.json -s a/b/c/TypeName "01 0A 01"
