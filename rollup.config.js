@@ -8,7 +8,7 @@ export default {
     output: {
         format: 'cjs',
         file: './dist/index.js',
-        banner: '#!/usr/bin/env node'
+        banner: '#!/usr/bin/env node\n' + require('./scripts/copyright')
     },
     plugins: [
         typescript({
@@ -27,7 +27,7 @@ export default {
             toplevel: true,
             mangle: {},
             format: {
-                comments: false
+                comments: /^!/
             }
         })
     ]
