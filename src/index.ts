@@ -7,14 +7,15 @@ import * as path from "path";
 import { TSBuffer } from 'tsbuffer';
 import { TSBufferProtoGenerator } from 'tsbuffer-proto-generator';
 import { TSBufferProto } from 'tsbuffer-schema';
-import { i18n } from '../i18n/i18n';
+import { i18n } from './i18n/i18n';
 import 'node-json-color-stringify';
+import packageJson from '../package.json';
 
 let colorJson = (json: any) => {
     return (JSON as any).colorStringify(json, null, 2) as string;
 };
 
-const version = require('./package.json').version;
+const version = packageJson.version;
 const args = minimist.default(process.argv);
 let verbose: boolean | undefined = args.verbose || args.v;
 
