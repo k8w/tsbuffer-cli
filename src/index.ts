@@ -3,12 +3,12 @@ import * as fs from "fs";
 import * as glob from 'glob';
 import 'k8w-extend-native';
 import * as minimist from 'minimist';
+import 'node-json-color-stringify';
 import * as path from "path";
 import { TSBuffer } from 'tsbuffer';
-import { TSBufferProtoGenerator } from 'tsbuffer-proto-generator';
+import { EncodeIdUtil, TSBufferProtoGenerator } from 'tsbuffer-proto-generator';
 import { TSBufferProto } from 'tsbuffer-schema';
 import { i18n } from './i18n/i18n';
-import 'node-json-color-stringify';
 
 let colorJson = (json: any) => {
     return (JSON as any).colorStringify(json, null, 2) as string;
@@ -148,9 +148,17 @@ async function proto(input?: string | string[], output?: string, compatible?: st
         }
     }
 
+    let canOptimizeByNew = false;
+    EncodeIdUtil.onGenCanOptimized = () => {
+        canOptimizeByNew = true;
+    }
     let proto = await new TSBufferProtoGenerator({ verbose: verbose }).generate(fileList, {
         compatibleResult: oldProto
     });
+
+    if (canOptimizeByNew) {
+        console.warn(i18n.canOptimizeByNew);
+    }
 
     if (output) {
         let json = ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2);
