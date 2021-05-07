@@ -155,6 +155,7 @@ async function proto(input?: string | string[], output?: string, compatible?: st
     let proto = await new TSBufferProtoGenerator({ verbose: verbose }).generate(fileList, {
         compatibleResult: oldProto
     });
+    EncodeIdUtil.onGenCanOptimized = undefined;
 
     if (canOptimizeByNew) {
         console.warn(i18n.canOptimizeByNew);
