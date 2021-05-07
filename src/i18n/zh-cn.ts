@@ -10,7 +10,7 @@ export const i18n = {
                                             --output xxx.json 将输出JSON格式
                                             --output xxx.ts 将输出TS格式
         -c, --compatible <file>             兼容模式：要兼容的旧Proto文件的路径（默认同output）
-        -n, --new                           不兼容旧版，生成全新的Proto文件
+        --new                               不兼容旧版，生成全新的Proto文件
         -u, --ugly                          输出为可读性较差但体积更小压缩格式
         -v, --verbose                       显示调试信息
     

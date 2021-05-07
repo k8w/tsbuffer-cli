@@ -6,5 +6,6 @@ let json = JSON.parse(content);
 
 delete json.scripts;
 delete json.devDependencies;
+json.dependencies = {};
 
 fs.writeFileSync(path.resolve(__dirname, '../dist/package.json'), JSON.stringify(json, null, 2), 'utf-8')

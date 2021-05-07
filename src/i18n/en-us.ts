@@ -10,7 +10,7 @@ Usage：
                                             --output xxx.json would export as JSON format
                                             --output xxx.ts would export as TypeScript Script
         -c, --compatible <file>             Compatible mode, compatible to old proto (=output by default)
-        -n, --new                           Generate fresh new proto (no compatible)
+        --new                               Generate fresh new proto (no compatible)
         -u, --ugly                          Output as ugly JSON (no indent and smaller)
         -v, --verbose                       Show debug info
     
