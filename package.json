@@ -48,7 +48,7 @@
     "minimist": "^1.2.5",
     "node-json-color-stringify": "^1.1.0",
     "os-locale": "^4.0.0",
-    "tsbuffer": "^2.0.2-dev.0",
-    "tsbuffer-proto-generator": "^1.4.1-dev.3"
+    "tsbuffer": "^2.0.2-dev.1",
+    "tsbuffer-proto-generator": "^1.4.1-dev.4"
   }
 }
