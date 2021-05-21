@@ -155,13 +155,12 @@ async function proto(input?: string | string[], output?: string, compatible?: st
     let proto = await new TSBufferProtoGenerator({ verbose: verbose }).generate(fileList, {
         compatibleResult: oldProto
     });
-    EncodeIdUtil.onGenCanOptimized = undefined;
-
-    if (canOptimizeByNew) {
-        console.warn(i18n.canOptimizeByNew);
-    }
 
     if (output) {
+        if (canOptimizeByNew) {
+            console.warn(i18n.canOptimizeByNew);
+        }
+
         let json = ugly ? JSON.stringify(proto) : JSON.stringify(proto, null, 2);
         // Output TS
         if (output.endsWith('.ts')) {
