@@ -23,18 +23,18 @@ export default {
             objectHashIgnoreUnknownHack: true,
             rollupCommonJSResolveHack: true
         }),
-        nodeResolve(),
-        commonjs(),
-        json(),
+        // nodeResolve(),
+        // commonjs(),
+        // json(),
         replace({
             '__TSBUFFER_CLI_VERSION__': require('./package.json').version
         }),
-        terser({
-            toplevel: true,
-            mangle: {},
-            format: {
-                comments: /^!/
-            }
-        })
+        // terser({
+        //     toplevel: true,
+        //     mangle: {},
+        //     format: {
+        //         comments: /^!/
+        //     }
+        // })
     ]
 }

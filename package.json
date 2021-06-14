@@ -1,11 +1,10 @@
 {
   "name": "tsbuffer-cli",
-  "version": "1.3.0-dev.1",
+  "version": "1.2.4",
   "description": "TSBuffer CLI Tools",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && npx rollup -c && node scripts/copyPackage.js && cp LICENSE README.md dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && rollup -c && cp LICENSE README.md package.json dist/"
   },
   "bin": {
     "tsbuffer": "./index.js"
@@ -22,24 +21,24 @@
     "protobuf"
   ],
   "author": "k8w",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/k8w/tsbuffer-cli/issues"
   },
   "homepage": "https://github.com/k8w/tsbuffer-cli#readme",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^18.1.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
     "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@rollup/plugin-replace": "^2.4.2",
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/glob": "^7.1.3",
     "@types/minimist": "^1.2.1",
-    "@types/node": "^12.20.13",
-    "rollup": "^2.48.0",
+    "@types/node": "^15.12.2",
+    "rollup": "^2.51.2",
     "rollup-plugin-terser": "^7.0.2",
-    "rollup-plugin-typescript2": "^0.25.3",
-    "tslib": "^2.2.0"
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tslib": "^2.3.0"
   },
   "dependencies": {
     "colors": "^1.4.0",
@@ -47,8 +46,8 @@
     "k8w-extend-native": "^1.4.5",
     "minimist": "^1.2.5",
     "node-json-color-stringify": "^1.1.0",
-    "os-locale": "^4.0.0",
-    "tsbuffer": "^2.0.2-dev.1",
-    "tsbuffer-proto-generator": "^1.4.1-dev.4"
+    "os-locale": "^5.0.0",
+    "tsbuffer": "^2.0.2",
+    "tsbuffer-proto-generator": "^1.4.1"
   }
 }
