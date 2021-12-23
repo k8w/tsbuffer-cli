@@ -1,6 +1,6 @@
 {
   "name": "tsbuffer-cli",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "TSBuffer CLI Tools",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "tsbuffer": "./index.js"
+    "tsbuffer": "./index.js",
+    "tsbuffer-cli": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -33,8 +34,8 @@
     "@types/glob": "^7.2.0",
     "@types/minimist": "^1.2.2",
     "@types/node": "^15.14.9",
-    "rollup": "^2.59.0",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "rollup": "^2.61.1",
+    "rollup-plugin-typescript2": "^0.31.1"
   },
   "dependencies": {
     "colors": "^1.4.0",
@@ -43,8 +44,8 @@
     "minimist": "^1.2.5",
     "node-json-color-stringify": "^1.1.0",
     "os-locale": "^5.0.0",
-    "tsbuffer": "^2.1.0",
-    "tsbuffer-proto-generator": "^1.5.0",
+    "tsbuffer": "^2.1.5",
+    "tsbuffer-proto-generator": "^1.6.0",
     "tslib": "^2.3.1"
   }
 }
